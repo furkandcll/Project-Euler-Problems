@@ -1,3 +1,5 @@
+import pandas as pd
+
 x = int(input("Enter a number: "))
 
 i = 0
@@ -12,4 +14,12 @@ while i < x:
 
 euler1 = sum(numbers)
 
-print(euler1)
+pandas_test = pd.Series(numbers)
+
+print("Sum of the numbers that can be divided by either 3 or 5: ", euler1)
+
+print("Pandas series:\n", pandas_test, sep="")
+
+print("Mean value: ",pandas_test.mean())
+print("Maximum value: ",pandas_test.max())
+print("Minimum value: ", pandas_test.min())
