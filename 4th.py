@@ -1,3 +1,5 @@
+# Largest Palindrome Product
+
 import pandas as pd
 
 def if_palindrome(x, y):
@@ -12,7 +14,6 @@ def if_palindrome(x, y):
 
     if templist == reversed:
         return True
-
 
 first_threedigit = set(range(100, 1000))
 
@@ -57,5 +58,6 @@ largest = max(results, key=lambda d: d["product"])
 print("Largest palindrome made from the product of two-digit numbers:", largest)
 
 print("-----------------------------------------------------------------------------------------------------------------------")
+
 
 df.to_csv("palindrome_products.csv", index=False)
