@@ -1,6 +1,6 @@
-import math
-
 # Sieve of Eratosthenes for prime factorization
+
+import math
 
 given_n = int(input("Enter a number: "))
 
@@ -29,4 +29,5 @@ for i in primelist:
         prime_factors.add(given_n)
 
 print("Prime factors are:\n", sorted(prime_factors), sep="")
+
 
