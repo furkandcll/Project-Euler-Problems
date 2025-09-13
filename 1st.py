@@ -1,3 +1,5 @@
+# Multiples of 3 or 5
+
 import pandas as pd
 
 x = int(input("Enter a number: "))
@@ -23,3 +25,4 @@ print("Pandas series:\n", pandas_test, sep="")
 print("Mean value: ",pandas_test.mean())
 print("Maximum value: ",pandas_test.max())
 print("Minimum value: ", pandas_test.min())
+
