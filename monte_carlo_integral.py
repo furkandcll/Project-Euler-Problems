@@ -17,7 +17,6 @@ while True:
     except ValueError:
         print("Invalid input. Please enter an integer.")
 
-
 def f(x):
     return eval(function_determiner)
 
@@ -67,5 +66,6 @@ def graph_monte_carlo_integral(f, a, b, attempts):
     plt.scatter(x_outside, y_outside, color="blue", s=1, label="Outside the Function")
     plt.legend()
     plt.show()
+
 
 graph_monte_carlo_integral(f, point_a, point_b, given_attempt_number)
