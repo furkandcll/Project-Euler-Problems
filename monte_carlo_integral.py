@@ -31,8 +31,6 @@ def monte_carlo_integral(f, a, b, attempts):
     estimated_integral = (correct_guess/attempts) * (b - a) * f_max
     print(f"Definite integral between {a} and {b} is estimated as {estimated_integral}")
 
-
-
 monte_carlo_integral(f, point_a, point_b, given_attempt_number)
 
 #------------------------------------------------------------------------
@@ -67,5 +65,5 @@ def graph_monte_carlo_integral(f, a, b, attempts):
     plt.legend()
     plt.show()
 
-
 graph_monte_carlo_integral(f, point_a, point_b, given_attempt_number)
+
