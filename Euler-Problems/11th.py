@@ -2,7 +2,6 @@ grid = []
 with open("grid.txt") as f:
     for line in f:
         grid.append([int(x) for x in line.split()])
-the_top =  {"Numbers": None, "Product": 0}
 
 #--------------------------------------------------------------------------------------
 
@@ -44,6 +43,8 @@ greatest = max(results, key=lambda x: x["Product"])
 print(greatest)
 
 #--------------------------------------------------------------------------------------
+
+the_top =  {"Numbers": None, "Product": 0}
 
 for i in range(0,20):
     for j in range(0, 20):
@@ -104,3 +105,4 @@ for i in range(20):
                 continue
 
 print(the_top)
+
