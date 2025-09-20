@@ -119,7 +119,9 @@ print(f"Probability of bankruptcy: {probability_of_ruin*100:.2f}%")
 plt.axhline(y=0, color='r', linestyle='--', label='Bankrupt')
 plt.legend()
 
+plt.title("Martingale Strategy")
 plt.xlabel("Amount of Bets")
 plt.ylabel("Total Value in Dollars")
 
 plt.show()
+
