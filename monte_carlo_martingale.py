@@ -50,7 +50,7 @@ def martingale(funds, first_bet, max_rounds):
 
     current_round = 1
 
-    previous_result = "win"
+    previous_result = None
 
     global broke_count
 
@@ -103,6 +103,27 @@ def martingale(funds, first_bet, max_rounds):
                 Xaxis.append(current_round)
                 Yaxis.append(total_amount)
 
+        elif previous_result is None:
+
+            if roll(losing_streak, winning_streak):
+                winning_streak += 1
+                losing_streak = 0
+
+                total_amount += bet
+                previous_result = "win"
+                Xaxis.append(current_round)
+                Yaxis.append(total_amount)
+
+            else:
+                winning_streak = 0
+                losing_streak += 1
+
+                total_amount -= bet
+                previous_result = "loss"
+                Xaxis.append(current_round)
+                Yaxis.append(total_amount)
+
+
         current_round += 1
 
     if total_amount <= 0:
@@ -124,6 +145,3 @@ plt.xlabel("Amount of Bets")
 plt.ylabel("Total Value in Dollars")
 
 plt.show()
-
-
-
