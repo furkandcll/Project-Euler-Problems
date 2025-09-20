@@ -108,7 +108,7 @@ def martingale(funds, first_bet, max_rounds):
     if total_amount <= 0:
         broke_count += 1
 
-    plt.plot(Xaxis, Yaxis)
+    plt.plot(Xaxis, Yaxis, alpha=0.5, color='red' if total_amount <= 0 else 'green')
 
 for _ in range(total_simulations):
     martingale(a, b, c)
@@ -124,5 +124,6 @@ plt.xlabel("Amount of Bets")
 plt.ylabel("Total Value in Dollars")
 
 plt.show()
+
 
 
