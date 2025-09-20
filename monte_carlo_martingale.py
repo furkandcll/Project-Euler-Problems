@@ -57,7 +57,7 @@ def martingale(funds, first_bet, max_rounds):
     Xaxis = []
     Yaxis = []
 
-    while current_round <= max_rounds and total_amount >= first_bet:
+    while current_round <= max_rounds and total_amount > 0:
 
         if previous_result == "win":
 
@@ -124,4 +124,5 @@ plt.xlabel("Amount of Bets")
 plt.ylabel("Total Value in Dollars")
 
 plt.show()
+
 
