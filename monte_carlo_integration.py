@@ -17,11 +17,22 @@ while True:
     except ValueError:
         print("Invalid input. Please enter an integer.")
 
+allowed_funcs = {
+    "np": np,
+    "sin": np.sin,
+    "cos": np.cos,
+    "tan": np.tan,
+    "exp": np.exp,
+    "log": np.log,
+    "sqrt": np.sqrt,
+    "abs": np.abs
+}
+
 def f(x):
-    return eval(function_determiner)
+     return eval(function_determiner, {"x": x, "__builtins__": None}, allowed_funcs)
 
 def monte_carlo_integral(f, a, b, attempts):
-    f_max = max(f(x) for x in np.linspace(a, b, 1000))
+    f_max = max(f(x) for x in np.linspace(a, b, 10000))
     correct_guess = 0
     for _ in range(attempts):
         x = random.uniform(a, b)
@@ -31,12 +42,14 @@ def monte_carlo_integral(f, a, b, attempts):
     estimated_integral = (correct_guess/attempts) * (b - a) * f_max
     print(f"Definite integral between {a} and {b} is estimated as {estimated_integral}")
 
+
+
 monte_carlo_integral(f, point_a, point_b, given_attempt_number)
 
 #------------------------------------------------------------------------
 
 def graph_monte_carlo_integral(f, a, b, attempts):
-    f_max = max(f(x) for x in np.linspace(a, b, 1000))
+    f_max = max(f(x) for x in np.linspace(a, b, 10000))
     correct_guess = 0
     
     x_inside, y_inside = [], []
@@ -66,4 +79,3 @@ def graph_monte_carlo_integral(f, a, b, attempts):
     plt.show()
 
 graph_monte_carlo_integral(f, point_a, point_b, given_attempt_number)
-
