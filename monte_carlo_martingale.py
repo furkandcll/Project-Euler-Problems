@@ -27,6 +27,8 @@ if b > a:
 
 broke_count = 0
 
+ending_balances = []
+
 def roll(losing_streak, winning_streak):
     if dynamic_threshold:
         threshold = 50 + (losing_streak * 2) - (winning_streak * 2)
@@ -129,6 +131,8 @@ def martingale(funds, first_bet, max_rounds):
     if total_amount <= 0:
         broke_count += 1
 
+    ending_balances.append(total_amount)
+
     plt.plot(Xaxis, Yaxis, alpha=0.5, color='red' if total_amount <= 0 else 'green')
 
 for _ in range(total_simulations):
@@ -136,6 +140,8 @@ for _ in range(total_simulations):
 
 probability_of_ruin = broke_count / total_simulations
 print(f"Probability of bankruptcy: {probability_of_ruin*100:.2f}%")
+
+print(f"Average ending balance: {sum(ending_balances)/len(ending_balances):.2f}")
 
 plt.axhline(y=0, color='r', linestyle='--', label='Bankrupt')
 plt.legend()
